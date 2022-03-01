@@ -2,10 +2,19 @@ package main
 
 import (
 	"logger"
+	"rule"
 )
 
+var log *logger.Logger
+
+func init() {
+	log = logger.New()
+}
+
 func main() {
-	log := logger.New()
-	log.Info("Grissom")
-	log.Info("Grissom %s", "Hello")
+	deck := rule.NewDeck()
+	deck.Print()
+	log.Info("==================================")
+	deck.Shuffle()
+	//deck.Print()
 }

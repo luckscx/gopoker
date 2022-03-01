@@ -38,5 +38,9 @@ func (logobj *Logger) Info(format string, v ...interface{}) {
 	}
 }
 
+func (logobj *Logger) Infof(format string, v ...interface{}) {
+	logobj.innerLogger.Infof(format, v...)
+}
+
 func (logobj *Logger) Sync() {
 }
